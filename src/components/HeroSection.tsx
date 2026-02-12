@@ -1,7 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import { ArrowRight, Zap, Bot, Check, X } from "lucide-react";
-import Spline from '@splinetool/react-spline';
 
 const rotatingWords = ["Is Not Dumb", "Knows You", "Is Unique to you"];
 

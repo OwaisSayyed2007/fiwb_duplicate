@@ -1,11 +1,39 @@
-import Spline from '@splinetool/react-spline';
+import { useState, useEffect, Suspense, lazy } from 'react';
+
+const Spline = lazy(() => import('@splinetool/react-spline'));
 
 export default function GlobalBackground() {
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth < 768);
+        };
+
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
+
     return (
-        <div className="fixed inset-0 z-[-1] w-full h-full pointer-events-none">
-            <Spline
-                scene="https://prod.spline.design/kc-ue-UW4L6njbbS/scene.splinecode"
-            />
+        <div className="fixed inset-0 z-[-1] w-full h-full pointer-events-none overflow-hidden">
+            {isMobile ? (
+                <div
+                    className="absolute inset-0 bg-[#000000]"
+                    style={{
+                        backgroundImage: `
+                            radial-gradient(circle at 20% 30%, rgba(37, 99, 235, 0.15) 0%, transparent 40%),
+                            radial-gradient(circle at 80% 70%, rgba(37, 99, 235, 0.1) 0%, transparent 40%)
+                        `
+                    }}
+                />
+            ) : (
+                <Suspense fallback={<div className="absolute inset-0 bg-black" />}>
+                    <Spline
+                        scene="https://prod.spline.design/kc-ue-UW4L6njbbS/scene.splinecode"
+                    />
+                </Suspense>
+            )}
         </div>
     );
 }
