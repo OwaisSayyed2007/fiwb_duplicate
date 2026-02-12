@@ -9,7 +9,7 @@ const Waitlist = () => {
     return (
         <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
             <Navbar />
-            <main className="pt-20 md:pt-24">
+            <main className="pt-28 md:pt-24">
                 <div className="max-w-7xl mx-auto px-6 md:px-12 mb-2">
                     <Link
                         to="/"

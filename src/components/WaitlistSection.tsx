@@ -147,7 +147,7 @@ const WaitlistSection = () => {
                     name="college"
                     value={form.college}
                     onChange={handleChange}
-                    placeholder="IIT Bombay"
+                    placeholder="College Name"
                     className="w-full px-4 py-3 rounded-xl bg-secondary text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/30 transition-all text-sm"
                     maxLength={200}
                   />
