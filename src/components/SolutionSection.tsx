@@ -24,7 +24,7 @@ const SolutionSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-primary font-display text-sm font-semibold tracking-widest uppercase mb-4 block">
+          <span className="text-primary font-display text-xl font-bold tracking-[0.2em] uppercase mb-4 block">
             The Solution
           </span>
           <h2 className="text-3xl md:text-5xl font-display font-bold mb-6 leading-tight">

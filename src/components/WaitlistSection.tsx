@@ -43,32 +43,50 @@ const WaitlistSection = () => {
       return;
     }
     setLoading(true);
-    // Simulate submission
-    await new Promise((r) => setTimeout(r, 1500));
-    setLoading(false);
-    setSubmitted(true);
+
+    try {
+      // GOOGLE SHEETS INTEGRATION
+      const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyE00HV7fFM8zfwdVnCVe_nqgSzHiifU3Eb7r_HrheTpc931eijWumSyYeK-7F-7Ps/exec";
+
+      await fetch(SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors", // Required for Google Apps Script
+        cache: "no-cache",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(form),
+      });
+
+      setLoading(false);
+      setSubmitted(true);
+    } catch (error) {
+      console.error("Submission failed:", error);
+      setLoading(false);
+      setErrors({ ...errors, email: "Something went wrong. Please try again." });
+    }
   };
 
   return (
-    <section id="waitlist" className="section-padding relative overflow-hidden" ref={ref}>
+    <section id="waitlist" className="pb-12 md:pb-16 lg:pb-20 xl:pb-24 pt-8 md:pt-12 relative overflow-hidden" ref={ref}>
       {/* Background glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-primary/5 rounded-full blur-[150px]" />
 
-      <div className="max-w-2xl mx-auto relative">
+      <div className="max-w-2xl mx-auto relative px-4 md:px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="text-center mb-8 md:mb-12"
         >
           <span className="text-primary font-display text-sm font-semibold tracking-widest uppercase mb-4 block">
             Early Access
           </span>
-          <h2 className="text-3xl md:text-5xl font-display font-bold mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-display font-bold mb-4 md:mb-6">
             Be the First to <span className="text-gradient">Experience</span> FIWB AI
           </h2>
-          <p className="text-muted-foreground text-lg">
-            We're rolling out to a limited group of early beta users. 
+          <p className="text-muted-foreground text-base md:text-lg">
+            We're rolling out to a limited group of early beta users.
             Join the waitlist and get priority access.
           </p>
         </motion.div>
@@ -93,7 +111,7 @@ const WaitlistSection = () => {
               </p>
             </motion.div>
           ) : (
-            <form onSubmit={handleSubmit} className="glass rounded-2xl p-8 md:p-10 space-y-6">
+            <form onSubmit={handleSubmit} className="glass rounded-2xl p-6 md:p-8 lg:p-10 space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-medium text-foreground mb-2">Full Name</label>
@@ -102,7 +120,7 @@ const WaitlistSection = () => {
                     value={form.name}
                     onChange={handleChange}
                     placeholder="John Doe"
-                    className="w-full px-4 py-3 rounded-xl bg-secondary border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/30 transition-all text-sm"
+                    className="w-full px-4 py-3 rounded-xl bg-secondary text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/30 transition-all text-sm"
                     maxLength={100}
                   />
                   {errors.name && <p className="text-destructive text-xs mt-1">{errors.name}</p>}
@@ -115,7 +133,7 @@ const WaitlistSection = () => {
                     value={form.email}
                     onChange={handleChange}
                     placeholder="john@college.edu"
-                    className="w-full px-4 py-3 rounded-xl bg-secondary border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/30 transition-all text-sm"
+                    className="w-full px-4 py-3 rounded-xl bg-secondary text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/30 transition-all text-sm"
                     maxLength={255}
                   />
                   {errors.email && <p className="text-destructive text-xs mt-1">{errors.email}</p>}
@@ -130,7 +148,7 @@ const WaitlistSection = () => {
                     value={form.college}
                     onChange={handleChange}
                     placeholder="IIT Bombay"
-                    className="w-full px-4 py-3 rounded-xl bg-secondary border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/30 transition-all text-sm"
+                    className="w-full px-4 py-3 rounded-xl bg-secondary text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/30 transition-all text-sm"
                     maxLength={200}
                   />
                   {errors.college && <p className="text-destructive text-xs mt-1">{errors.college}</p>}
@@ -141,7 +159,7 @@ const WaitlistSection = () => {
                     name="year"
                     value={form.year}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-xl bg-secondary border border-border text-foreground focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/30 transition-all text-sm appearance-none"
+                    className="w-full px-4 py-3 rounded-xl bg-secondary text-foreground focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/30 transition-all text-sm appearance-none"
                   >
                     <option value="" className="bg-card">Select year</option>
                     <option value="1st" className="bg-card">1st Year</option>

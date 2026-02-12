@@ -1,103 +1,81 @@
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { motion } from "framer-motion";
+import { Link, useLocation } from "react-router-dom";
 
 const navLinks = [
-  { label: "Problem", href: "#problem" },
-  { label: "Solution", href: "#solution" },
-  { label: "Innovation", href: "#innovation" },
-  { label: "Progress", href: "#progress" },
+  { label: "Problem", href: "/#comparison" },
+  { label: "Solution", href: "/#solution" },
+  { label: "Innovation", href: "/#innovation" },
+  { label: "Progress", href: "/#progress" },
 ];
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 50);
+    const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  return (
-    <motion.nav
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? "glass-strong shadow-lg shadow-background/50" : "bg-transparent"
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between h-16 md:h-20">
-        <a href="#" className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-lg bg-primary/20 border border-primary/40 flex items-center justify-center">
-            <span className="text-primary font-display font-bold text-sm">F</span>
-          </div>
-          <span className="font-display font-bold text-lg text-foreground">
-            FIWB <span className="text-primary">AI</span>
-          </span>
-        </a>
+  // Scroll to section for hash links
+  useEffect(() => {
+    if (location.hash) {
+      const el = document.querySelector(location.hash);
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [location]);
 
-        {/* Desktop */}
-        <div className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300"
+  return (
+    <div className="fixed top-0 left-0 right-0 z-50 flex justify-center pointer-events-none p-4">
+      <motion.nav
+        layout
+        transition={{ type: "spring", stiffness: 200, damping: 30 }}
+        className={`pointer-events-auto backdrop-blur-xl border overflow-hidden shadow-2xl ${scrolled
+          ? "w-fit min-w-[280px] max-w-[95vw] md:min-w-[600px] rounded-full bg-white/60 border-black/10 px-6 py-3"
+          : "w-full max-w-7xl rounded-full bg-white/20 border-white/10 px-6 md:px-12 h-20"
+          }`}
+      >
+        <div className="flex items-center justify-between h-full gap-4 md:gap-8 lg:gap-12">
+          {/* Logo Section */}
+          <Link to="/" className="flex items-center gap-3 shrink-0 pointer-events-auto">
+            <div className="w-10 h-10 rounded-xl bg-primary/20 border border-primary/40 flex items-center justify-center shrink-0">
+              <span className="text-primary font-display font-bold text-base">F</span>
+            </div>
+            <motion.span
+              layout
+              className={`font-display font-bold text-foreground whitespace-nowrap ${scrolled ? "text-base" : "text-xl"
+                }`}
             >
-              {link.label}
-            </a>
-          ))}
-          <a
-            href="#waitlist"
-            className="px-5 py-2 rounded-full bg-primary text-primary-foreground font-medium text-sm hover:shadow-lg hover:shadow-primary/25 transition-all duration-300"
+              FIWB <span className="text-primary">AI</span>
+            </motion.span>
+          </Link>
+
+          {/* Desktop Links - Hidden on Mobile */}
+          <div className="hidden md:flex items-center gap-6 lg:gap-10">
+            {navLinks.map((link) => (
+              <Link
+                key={link.label}
+                to={link.href}
+                className={`text-gray-800 hover:text-primary transition-all duration-300 font-bold whitespace-nowrap ${scrolled ? "text-base" : "text-lg"
+                  }`}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+
+          {/* Waitlist Button - Always Visible */}
+          <Link
+            to="/waitlist"
+            className="px-5 py-2.5 md:px-8 md:py-3 rounded-full bg-blue-600 text-white font-bold text-sm md:text-base shadow-xl shadow-blue-600/30 hover:bg-blue-700 hover:scale-105 active:scale-95 transition-all duration-300 whitespace-nowrap shrink-0"
           >
             Join Waitlist
-          </a>
+          </Link>
         </div>
-
-        {/* Mobile toggle */}
-        <button
-          onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden text-foreground"
-        >
-          {mobileOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
-      </div>
-
-      {/* Mobile menu */}
-      <AnimatePresence>
-        {mobileOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden glass-strong overflow-hidden"
-          >
-            <div className="px-6 py-6 flex flex-col gap-4">
-              {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setMobileOpen(false)}
-                  className="text-muted-foreground hover:text-primary transition-colors py-2"
-                >
-                  {link.label}
-                </a>
-              ))}
-              <a
-                href="#waitlist"
-                onClick={() => setMobileOpen(false)}
-                className="px-5 py-3 rounded-full bg-primary text-primary-foreground font-medium text-sm text-center"
-              >
-                Join Waitlist
-              </a>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </motion.nav>
+      </motion.nav>
+    </div>
   );
 };
 
