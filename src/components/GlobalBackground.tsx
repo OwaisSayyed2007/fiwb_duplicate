@@ -1,7 +1,7 @@
 import React, { Suspense } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import mobileBg from '@/assets/mobile-bg.png';
-import Spline from '@splinetool/react-spline/next';
+import Spline from '@splinetool/react-spline';
 
 export default function GlobalBackground() {
     const isMobile = useIsMobile();
