@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { ArrowRight, Zap, Bot, Check, X } from "lucide-react";
 
 const rotatingWords = ["Is Not Dumb", "Knows You", "Is Unique to you"];
@@ -55,13 +56,13 @@ const HeroSection = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
-            <a
-              href="#waitlist"
+            <Link
+              to="/waitlist"
               className="group px-8 py-4 rounded-full bg-primary text-primary-foreground font-display font-semibold text-base hover:shadow-xl hover:shadow-primary/30 transition-all duration-300 flex items-center gap-2"
             >
               Join the Waitlist
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </a>
+            </Link>
             <a
               href="#solution"
               className="px-8 py-4 rounded-full glass border-primary/20 text-foreground font-display font-medium text-base hover:border-primary/40 transition-all duration-300"
