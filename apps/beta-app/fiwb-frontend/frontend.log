@@ -20,3 +20,23 @@ Failed to benchmark file I/O: No such file or directory (os error 2)
 ○ Compiling / ...
  GET / 200 in 3.7s (compile: 3.4s, render: 223ms)
  GET / 200 in 61ms (compile: 3ms, render: 58ms)
+⚠ Found a change in next.config.ts. Restarting the server to apply the changes...
+⚠ `eslint` configuration in next.config.ts is no longer supported. See more info here: https://nextjs.org/docs/app/api-reference/cli/next#next-lint-options
+⚠ Invalid next.config.ts options detected: 
+⚠     Unrecognized key(s) in object: 'eslint'
+⚠ See more info here: https://nextjs.org/docs/messages/invalid-next-config
+▲ Next.js 16.1.6 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.0.101:3000
+- Environments: .env.local
+
+✓ Starting...
+✓ Ready in 719ms
+⚠ Found a change in next.config.ts. Restarting the server to apply the changes...
+▲ Next.js 16.1.6 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.0.101:3000
+- Environments: .env.local
+
+✓ Starting...
+✓ Ready in 545ms
