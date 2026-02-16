@@ -1,73 +1,45 @@
-# Welcome to your Lovable project
+# FIWB Monorepo
 
-## Project info
+This repository contains the complete source code for FIWB AI, including the landing page and the beta application.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## Structure
 
-## How can I edit this code?
+- **`apps/landing`**: The public landing page (https://fiwbai.xyz).
+- **`apps/beta-app`**: The core application (https://beta.fiwbai.xyz), containing:
+  - `fiwb-backend`: Python backend using FastAPI.
+  - `fiwb-frontend`: Next.js frontend.
 
-There are several ways of editing your application.
+## Getting Started
 
-**Use Lovable**
+### Prerequisites
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+- Node.js & npm
+- Python 3.8+
 
-Changes made via Lovable will be committed automatically to this repo.
+### Install Dependencies
 
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```bash
+npm install
 ```
 
-**Edit a file directly in GitHub**
+### Running Locally
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+To run the **Landing Page**:
+```bash
+npm run dev:landing
+```
 
-**Use GitHub Codespaces**
+To run the **Beta Application** (Frontend + Backend):
+```bash
+npm run dev:beta-full
+```
+(This script starts both the Python backend and Next.js frontend).
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+To run only the Beta Frontend:
+```bash
+npm run dev:beta-frontend
+```
 
-## What technologies are used for this project?
+## Deployment
 
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Refer to `DEPLOYMENT_GUIDE.md` (root) for detailed deployment instructions.

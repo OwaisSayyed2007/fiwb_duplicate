@@ -1,0 +1,50 @@
+INFO:     Will watch for changes in these directories: ['/Users/owaissayyed/Github Repos/FIWB Duplicate/apps/beta-app/fiwb-backend']
+INFO:     Uvicorn running on http://127.0.0.1:8001 (Press CTRL+C to quit)
+INFO:     Started reloader process [16722] using WatchFiles
+/Users/owaissayyed/Github Repos/FIWB Duplicate/apps/beta-app/fiwb-backend/venv/lib/python3.9/site-packages/pypdf/_crypt_providers/_cryptography.py:32: CryptographyDeprecationWarning: ARC4 has been moved to cryptography.hazmat.decrepit.ciphers.algorithms.ARC4 and will be removed from cryptography.hazmat.primitives.ciphers.algorithms in 48.0.0.
+  from cryptography.hazmat.primitives.ciphers.algorithms import AES, ARC4
+/Users/owaissayyed/Github Repos/FIWB Duplicate/apps/beta-app/fiwb-backend/venv/lib/python3.9/site-packages/google/api_core/_python_version_support.py:246: FutureWarning: You are using a non-supported Python version (3.9.6). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.10, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+/Users/owaissayyed/Github Repos/FIWB Duplicate/apps/beta-app/fiwb-backend/venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+INFO:     Started server process [16776]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+DEBUG: Found 25 materials in local DB for GMAIL_INBOX
+INFO:     127.0.0.1:58491 - "GET /api/courses/GMAIL_INBOX/materials?user_email=owaissayyed2007@gmail.com HTTP/1.1" 200 OK
+DEBUG: Found 25 materials in local DB for GMAIL_INBOX
+INFO:     127.0.0.1:58492 - "GET /api/courses/GMAIL_INBOX/materials?user_email=owaissayyed2007@gmail.com HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58490 - "GET /api/courses/?user_email=owaissayyed2007@gmail.com HTTP/1.1" 200 OK
+DEBUG: Found 25 materials in local DB for GMAIL_INBOX
+INFO:     127.0.0.1:58491 - "GET /api/courses/GMAIL_INBOX/materials?user_email=owaissayyed2007@gmail.com HTTP/1.1" 200 OK
+DEBUG: Found 25 materials in local DB for GMAIL_INBOX
+INFO:     127.0.0.1:58492 - "GET /api/courses/GMAIL_INBOX/materials?user_email=owaissayyed2007@gmail.com HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58490 - "GET /api/courses/?user_email=owaissayyed2007@gmail.com HTTP/1.1" 200 OK
+DEBUG: Found 25 materials in local DB for GMAIL_INBOX
+INFO:     127.0.0.1:58491 - "GET /api/courses/GMAIL_INBOX/materials?user_email=owaissayyed2007@gmail.com HTTP/1.1" 200 OK
+DEBUG: Found 25 materials in local DB for GMAIL_INBOX
+INFO:     127.0.0.1:58492 - "GET /api/courses/GMAIL_INBOX/materials?user_email=owaissayyed2007@gmail.com HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58490 - "GET /api/courses/?user_email=owaissayyed2007@gmail.com HTTP/1.1" 200 OK
+DEBUG: Found 25 materials in local DB for GMAIL_INBOX
+INFO:     127.0.0.1:58491 - "GET /api/courses/GMAIL_INBOX/materials?user_email=owaissayyed2007@gmail.com HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58490 - "GET /api/courses/?user_email=owaissayyed2007@gmail.com HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58490 - "GET /api/courses/?user_email=owaissayyed2007@gmail.com HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58490 - "GET /api/courses/?user_email=owaissayyed2007@gmail.com HTTP/1.1" 200 OK
+DEBUG: Found 25 materials in local DB for GMAIL_INBOX
+INFO:     127.0.0.1:58491 - "GET /api/courses/GMAIL_INBOX/materials?user_email=owaissayyed2007@gmail.com HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58490 - "GET /api/courses/?user_email=owaissayyed2007@gmail.com HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58490 - "GET /api/courses/?user_email=owaissayyed2007@gmail.com HTTP/1.1" 200 OK
+WARNING:  WatchFiles detected changes in 'app/beta_config.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [16776]
+/Users/owaissayyed/Github Repos/FIWB Duplicate/apps/beta-app/fiwb-backend/venv/lib/python3.9/site-packages/pypdf/_crypt_providers/_cryptography.py:32: CryptographyDeprecationWarning: ARC4 has been moved to cryptography.hazmat.decrepit.ciphers.algorithms.ARC4 and will be removed from cryptography.hazmat.primitives.ciphers.algorithms in 48.0.0.
+  from cryptography.hazmat.primitives.ciphers.algorithms import AES, ARC4
+/Users/owaissayyed/Github Repos/FIWB Duplicate/apps/beta-app/fiwb-backend/venv/lib/python3.9/site-packages/google/api_core/_python_version_support.py:246: FutureWarning: You are using a non-supported Python version (3.9.6). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.10, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+/Users/owaissayyed/Github Repos/FIWB Duplicate/apps/beta-app/fiwb-backend/venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+INFO:     Started server process [17566]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
