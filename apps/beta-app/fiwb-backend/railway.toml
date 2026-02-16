@@ -2,10 +2,10 @@
 builder = "nixpacks"
 
 [phases.setup]
-nixPkgs = ["python39", "postgresql"]
+nixPkgs = ["python312", "postgresql", "rustc", "cargo"]
 
 [phases.install]
-cmds = ["pip install -r requirements.txt"]
+cmds = ["pip install --upgrade pip", "pip install -r requirements.txt"]
 
 [start]
 cmd = "uvicorn app.main:app --host 0.0.0.0 --port $PORT"
