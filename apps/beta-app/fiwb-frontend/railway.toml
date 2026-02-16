@@ -1,12 +1,6 @@
 [build]
 builder = "nixpacks"
 
-[phases.setup]
-nixPkgs = ["nodejs-20_x"]
-
-[phases.setup.archive]
-"node" = "20"
-
 [phases.build]
 cmds = ["npm install", "npm run build"]
 
