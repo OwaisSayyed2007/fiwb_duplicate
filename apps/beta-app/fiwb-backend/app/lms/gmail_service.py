@@ -59,7 +59,7 @@ class GmailSyncService:
             gmail_course = Course(
                 id="GMAIL_INBOX",
                 name="Neural Assistant Knowledge",
-                professor="Personal Assistant",
+                professor="",
                 platform="Gmail"
             )
             db.add(gmail_course)

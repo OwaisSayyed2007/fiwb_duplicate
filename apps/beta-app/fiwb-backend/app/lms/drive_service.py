@@ -62,7 +62,7 @@ class DriveSyncService:
             drive_course = Course(
                 id="GOOGLE_DRIVE",
                 name="Personal Google Drive",
-                professor="Self",
+                professor="",
                 platform="Google Drive"
             )
             db.add(drive_course)

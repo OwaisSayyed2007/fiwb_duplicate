@@ -129,12 +129,12 @@ class LMSSyncService:
                                 professor_name = teachers[0].get('profile', {}).get('name', {}).get('fullName', 'Unknown')
                                 
                                 # Update DB immediately so card looks complete
-                                def update_prof():
-                                    dbc = task_db.query(Course).filter(Course.id == c_id).first()
-                                    if dbc:
-                                        dbc.professor = professor_name
-                                        task_db.commit()
-                                await asyncio.to_thread(update_prof)
+                                # def update_prof():
+                                #     dbc = task_db.query(Course).filter(Course.id == c_id).first()
+                                #     if dbc:
+                                #         dbc.professor = professor_name
+                                #         task_db.commit()
+                                # await asyncio.to_thread(update_prof)
                         except Exception as prof_err:
                             logger.error(f"  Error fetching prof for {c_name}: {prof_err}")
 

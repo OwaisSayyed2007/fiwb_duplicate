@@ -406,8 +406,16 @@ export default function Dashboard() {
                                             <div className="flex-1 min-w-0">
                                                 <h4 className="font-bold text-gray-900 dark:text-white truncate">{course.name}</h4>
                                                 <div className="flex items-center gap-2">
-                                                    <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">{course.professor}</p>
-                                                    <span className="w-1 h-1 rounded-full bg-gray-300" />
+                                                    {course.professor &&
+                                                        course.professor !== "Loading..." &&
+                                                        course.professor !== "Self" &&
+                                                        course.professor !== "Personal Assistant" &&
+                                                        course.platform !== "Google Classroom" && (
+                                                            <>
+                                                                <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">{course.professor}</p>
+                                                                <span className="w-1 h-1 rounded-full bg-gray-300" />
+                                                            </>
+                                                        )}
                                                     <span className="text-[10px] font-bold text-blue-500 uppercase tracking-widest">{course.platform}</span>
                                                 </div>
                                             </div>
