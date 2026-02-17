@@ -163,8 +163,7 @@ async def login(request: LoginRequest, background_tasks: BackgroundTasks, db: Se
         raise he
     except Exception as e:
         import traceback
-        error_msg = f"Terminal initialization failure: {str(e)}"
         logger.error(f"Login process failed: {str(e)}")
         logger.error(traceback.format_exc())
-        raise HTTPException(status_code=500, detail=error_msg)
+        raise HTTPException(status_code=500, detail="Terminal initialization failure")
 

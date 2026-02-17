@@ -2,7 +2,7 @@ import os
 from dotenv import load_dotenv
 from typing import Optional
 
-load_dotenv(override=True)
+load_dotenv()
 
 class Settings:
     PROJECT_NAME: str = "FIWB AI"
