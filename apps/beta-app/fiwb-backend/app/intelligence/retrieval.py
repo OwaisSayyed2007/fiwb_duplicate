@@ -96,7 +96,7 @@ Focus on extracting the subject of the conversation.
         profile_filters = [{"key": "user_id", "value": self.user_email, "negate": False}, {"key": "type", "value": "user_profile", "negate": False}]
 
         # 2. Parallel Search Execution
-        if not self.sm_client.headers.get("Authorization"):
+        if not self.sm_client.api_key:
             print(f"🔍 [RETRIEVAL] Skipping Supermemory search for {self.user_email}: No API key.")
             return {
                 "course_context": [],

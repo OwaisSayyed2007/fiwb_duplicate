@@ -1,0 +1,58 @@
+
+> dev
+> concurrently -n "LANDING,NEXT,API" -c "blue,magenta,yellow" "npm run dev:landing" "npm run dev:beta-frontend" "npm run dev:beta-backend"
+
+[NEXT] 
+[NEXT] > dev:beta-frontend
+[NEXT] > npm run dev -w fiwb-frontend
+[NEXT] 
+[API] 
+[API] > dev:beta-backend
+[API] > cd apps/beta-app/fiwb-backend && . venv/bin/activate && uvicorn app.main:app --reload --port 8001
+[API] 
+[LANDING] 
+[LANDING] > dev:landing
+[LANDING] > npm run dev -w fiwb-landing
+[LANDING] 
+[LANDING] 
+[LANDING] > fiwb-landing@0.0.0 dev
+[LANDING] > vite
+[LANDING] 
+[NEXT] 
+[NEXT] > fiwb-frontend@0.1.0 dev
+[NEXT] > next dev
+[NEXT] 
+[API] INFO:     Will watch for changes in these directories: ['/Users/owaissayyed/Github Repos/FIWB Duplicate/apps/beta-app/fiwb-backend']
+[API] INFO:     Uvicorn running on http://127.0.0.1:8001 (Press CTRL+C to quit)
+[API] INFO:     Started reloader process [29736] using WatchFiles
+[LANDING] Re-optimizing dependencies because lockfile has changed
+[LANDING] 
+[LANDING]   VITE v5.4.19  ready in 869 ms
+[LANDING] 
+[LANDING]   ➜  Local:   http://localhost:8080/
+[LANDING]   ➜  Network: http://192.168.0.101:8080/
+[NEXT] ▲ Next.js 16.1.6 (Turbopack)
+[NEXT] - Local:         http://localhost:3000
+[NEXT] - Network:       http://192.168.0.101:3000
+[NEXT] - Environments: .env.local
+[NEXT] 
+[NEXT] ✓ Starting...
+[NEXT] ✓ Ready in 1311ms
+[API] /Users/owaissayyed/Github Repos/FIWB Duplicate/apps/beta-app/fiwb-backend/venv/lib/python3.9/site-packages/pypdf/_crypt_providers/_cryptography.py:32: CryptographyDeprecationWarning: ARC4 has been moved to cryptography.hazmat.decrepit.ciphers.algorithms.ARC4 and will be removed from cryptography.hazmat.primitives.ciphers.algorithms in 48.0.0.
+[API]   from cryptography.hazmat.primitives.ciphers.algorithms import AES, ARC4
+[API] /Users/owaissayyed/Github Repos/FIWB Duplicate/apps/beta-app/fiwb-backend/venv/lib/python3.9/site-packages/google/api_core/_python_version_support.py:246: FutureWarning: You are using a non-supported Python version (3.9.6). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.10, and then update google.api_core.
+[API]   warnings.warn(message, FutureWarning)
+[API] /Users/owaissayyed/Github Repos/FIWB Duplicate/apps/beta-app/fiwb-backend/venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+[API]   warnings.warn(
+[API] INFO:     Started server process [29799]
+[API] INFO:     Waiting for application startup.
+[API] INFO:     Application startup complete.
+[API] INFO:     Shutting down
+[LANDING] npm run dev:landing exited with code SIGTERM
+[API] INFO:     Waiting for application shutdown.
+[API] INFO:     Application shutdown complete.
+[API] INFO:     Finished server process [29799]
+[API] INFO:     Stopping reloader process [29736]
+[API] npm run dev:beta-backend exited with code SIGTERM
+[NEXT] [?25h
+[NEXT] npm run dev:beta-frontend exited with code 0

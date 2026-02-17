@@ -5,6 +5,7 @@ import json
 class SupermemoryClient:
     def __init__(self, api_key: str = None):
         self.base_url = settings.SUPERMEMORY_URL
+        self.api_key = api_key
         headers = {}
         
         if api_key:
@@ -13,7 +14,7 @@ class SupermemoryClient:
         # Add stealth/modern headers
         headers["User-Agent"] = "FIWB-AI/1.0 (Institutional Academic Hub)"
         
-        self.client = httpx.AsyncClient(headers=headers)
+        self.client = httpx.AsyncClient(headers=headers, timeout=30.0)
     
     async def add_document(self, content: str, metadata: dict, title: str = None, description: str = None):
         """Add a document to Supermemory with robust error handling for 400s and payload limits."""

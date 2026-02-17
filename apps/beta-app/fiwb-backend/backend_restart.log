@@ -1,0 +1,23 @@
+INFO:     Will watch for changes in these directories: ['/Users/owaissayyed/Github Repos/FIWB Duplicate/apps/beta-app/fiwb-backend']
+INFO:     Uvicorn running on http://127.0.0.1:8001 (Press CTRL+C to quit)
+INFO:     Started reloader process [34440] using WatchFiles
+/Users/owaissayyed/Github Repos/FIWB Duplicate/apps/beta-app/fiwb-backend/venv/lib/python3.9/site-packages/pypdf/_crypt_providers/_cryptography.py:32: CryptographyDeprecationWarning: ARC4 has been moved to cryptography.hazmat.decrepit.ciphers.algorithms.ARC4 and will be removed from cryptography.hazmat.primitives.ciphers.algorithms in 48.0.0.
+  from cryptography.hazmat.primitives.ciphers.algorithms import AES, ARC4
+/Users/owaissayyed/Github Repos/FIWB Duplicate/apps/beta-app/fiwb-backend/venv/lib/python3.9/site-packages/google/api_core/_python_version_support.py:246: FutureWarning: You are using a non-supported Python version (3.9.6). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.10, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+/Users/owaissayyed/Github Repos/FIWB Duplicate/apps/beta-app/fiwb-backend/venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+INFO:     Started server process [34520]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     🚀 [CHAT] Request from owaissayyed2007@gmail.com (Thread: new)
+INFO:     127.0.0.1:65005 - "POST /api/chat/stream HTTP/1.1" 200 OK
+INFO:     🧠 [CHAT] Starting analysis for: test query...
+INFO:     💰 [SUPERMEMORY] 500 tokens for owaissayyed2007@gmail.com. Cost: +$0.000025 | Total: $2.909018
+INFO:     💾 [Persistence] Starting save for thread fd1704de-8ffc-4ae9-ac56-32eb22cba6a1
+INFO:     💰 [LLM] 12007 tokens for owaissayyed2007@gmail.com. Cost: +$0.060035 | Total: $2.969053
+INFO:     💰 [LLM] 30 tokens for owaissayyed2007@gmail.com. Cost: +$0.000450 | Total: $2.969503
+INFO:     💰 [SLM] 500 tokens for owaissayyed2007@gmail.com. Cost: +$0.000075 | Total: $2.969578
+INFO:     💰 [SLM] 268 tokens for owaissayyed2007@gmail.com. Cost: +$0.000161 | Total: $2.969739
+INFO:     💰 [SUPERMEMORY] 500 tokens for owaissayyed2007@gmail.com. Cost: +$0.000025 | Total: $2.969764
+INFO:     💰 [SUPERMEMORY] 500 tokens for owaissayyed2007@gmail.com. Cost: +$0.000025 | Total: $2.969789

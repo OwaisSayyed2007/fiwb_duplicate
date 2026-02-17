@@ -5,9 +5,14 @@ from app.config import settings
 
 app = FastAPI(title="FIWB AI Backend")
 
-from app.database import engine
-from app.models import Base
-Base.metadata.create_all(bind=engine)
+try:
+    from app.database import engine
+    from app.models import Base
+    Base.metadata.create_all(bind=engine)
+except Exception as e:
+    import logging
+    logger = logging.getLogger("uvicorn.error")
+    logger.warning(f"⚠️ Could not create database tables on startup (DB might not be ready): {e}")
 
 app.add_middleware(
     CORSMiddleware,
