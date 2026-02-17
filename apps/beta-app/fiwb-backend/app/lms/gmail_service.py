@@ -17,7 +17,7 @@ logger = logging.getLogger("uvicorn.error")
 
 class GmailSyncService:
 
-    def __init__(self, access_token: str, user_email: str, refresh_token: str = None):
+    def __init__(self, access_token: str, user_email: str, refresh_token: str = None, sm_api_key: str = None):
         self.creds = Credentials(
             token=access_token,
             refresh_token=refresh_token,
@@ -27,7 +27,14 @@ class GmailSyncService:
         )
         self.user_email = standardize_email(user_email)
         self.openai_client = AsyncOpenAI(api_key=settings.OPENAI_API_KEY)
-        self.sm_client = SupermemoryClient()
+        
+        # Fetch user specific key from environment
+        import os
+        from app.utils.email import get_sm_key_env_var
+        env_sm_key = os.getenv(get_sm_key_env_var(self.user_email))
+        sm_api_key = env_sm_key or sm_api_key
+
+        self.sm_client = SupermemoryClient(api_key=sm_api_key)
         self.service = None 
 
     async def _get_service(self):

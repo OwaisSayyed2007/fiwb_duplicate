@@ -11,7 +11,7 @@ import json
 import asyncio
 
 class DriveSyncService:
-    def __init__(self, access_token: str, user_email: str, refresh_token: str = None):
+    def __init__(self, access_token: str, user_email: str, refresh_token: str = None, sm_api_key: str = None):
         from app.config import settings
         self.creds = Credentials(
             token=access_token,
@@ -22,7 +22,14 @@ class DriveSyncService:
         )
         self.service = None
         self.user_email = user_email
-        self.sm_client = SupermemoryClient()
+        
+        # Fetch user specific key from environment
+        import os
+        from app.utils.email import get_sm_key_env_var
+        env_sm_key = os.getenv(get_sm_key_env_var(self.user_email))
+        sm_api_key = env_sm_key or sm_api_key
+
+        self.sm_client = SupermemoryClient(api_key=sm_api_key)
 
     async def _get_service(self):
         """Thread-safe and async-safe service builder."""

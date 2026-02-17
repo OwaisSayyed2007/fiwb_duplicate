@@ -51,8 +51,16 @@ async def search_materials(q: str, user_email: str, db: Session = Depends(get_db
         seen_ids.add(m.id)
     
     # 2. Search in Supermemory (Digital Twin)
+    import os
+    from app.utils.email import get_sm_key_env_var
+    sm_key = os.getenv(get_sm_key_env_var(user_email))
+
+    if not sm_key:
+        print(f"🔍 [SEARCH] Skipping Supermemory search for {user_email}: No API key.")
+        return results[:30]
+
     try:
-        sm_client = SupermemoryClient()
+        sm_client = SupermemoryClient(api_key=sm_key)
         filters = {
             "AND": [
                 {"key": "user_id", "value": user_email}

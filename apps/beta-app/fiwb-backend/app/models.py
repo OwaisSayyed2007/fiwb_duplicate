@@ -32,6 +32,7 @@ class User(Base):
     supermemory_docs_indexed = Column(Integer, default=0)
     supermemory_requests_count = Column(Integer, default=0)
     lms_api_requests_count = Column(Integer, default=0)
+    # supermemory_api_key = Column(String, nullable=True) # REMOVED: Now using environment variables per user
     estimated_cost_usd = Column(Text, default="0.00") # Total estimated cost in USD
     
     created_at = Column(DateTime, default=datetime.utcnow)

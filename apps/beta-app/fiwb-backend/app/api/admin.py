@@ -10,10 +10,14 @@ from app.config import settings
 
 router = APIRouter()
 
+from pydantic import BaseModel
+
+
 def verify_admin(admin_email: str):
     if admin_email != settings.OWNER_EMAIL:
         raise HTTPException(status_code=403, detail="Unauthorized access to analytics")
     return admin_email
+
 
 @router.get("/users")
 def get_users(admin_email: str, db: Session = Depends(get_db)):
@@ -75,8 +79,10 @@ async def trigger_mock_sync(user_email: str, db: Session = Depends(get_db)):
         db.commit()
         db.refresh(user)
     
-    from app.supermemory.client import SupermemoryClient
-    sm_client = SupermemoryClient()
+    import os
+    from app.utils.email import get_sm_key_env_var
+    sm_key = os.getenv(get_sm_key_env_var(user_email))
+    sm_client = SupermemoryClient(api_key=sm_key)
     
     mock_courses = [
         {"id": "mock1", "name": "Artificial Intelligence", "professor": "Dr. Alan Turing", "platform": "Google Classroom"},

@@ -13,3 +13,10 @@ def standardize_email(email: str) -> str:
         return "siddhantwagh724@gmail.com"
         
     return email
+
+def get_sm_key_env_var(email: str) -> str:
+    """Generate the expected environment variable name for a user's Supermemory key."""
+    if not email:
+        return ""
+    sanitized = email.upper().replace("@", "_").replace(".", "_")
+    return f"SUPERMEMORY_API_KEY_{sanitized}"

@@ -10,10 +10,17 @@ import logging
 logger = logging.getLogger("uvicorn.error")
 
 class MoodleSyncService:
-    def __init__(self, moodle_url: str, moodle_token: str, user_email: str):
+    def __init__(self, moodle_url: str, moodle_token: str, user_email: str, sm_api_key: str = None):
         self.client = MoodleClient(moodle_url, moodle_token)
         self.user_email = user_email
-        self.sm_client = SupermemoryClient()
+        
+        # Fetch user specific key from environment
+        import os
+        from app.utils.email import get_sm_key_env_var
+        env_sm_key = os.getenv(get_sm_key_env_var(self.user_email))
+        sm_api_key = env_sm_key or sm_api_key
+
+        self.sm_client = SupermemoryClient(api_key=sm_api_key)
 
     async def sync_all(self):
         """Sync everything from Moodle."""

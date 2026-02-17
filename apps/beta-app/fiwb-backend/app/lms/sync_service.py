@@ -15,11 +15,18 @@ from app.utils.email import standardize_email
 logger = logging.getLogger("uvicorn.error")
 
 class LMSSyncService:
-    def __init__(self, access_token: str, user_email: str, refresh_token: str = None):
+    def __init__(self, access_token: str, user_email: str, refresh_token: str = None, sm_api_key: str = None):
         self.gc_client = GoogleClassroomClient(access_token, refresh_token)
         # Standardize email to full version
         self.user_email = standardize_email(user_email)
-        self.sm_client = SupermemoryClient()
+        
+        # Fetch user specific key from environment
+        import os
+        from app.utils.email import get_sm_key_env_var
+        env_sm_key = os.getenv(get_sm_key_env_var(self.user_email))
+        sm_api_key = env_sm_key or sm_api_key
+
+        self.sm_client = SupermemoryClient(api_key=sm_api_key)
 
     async def setup_push_notifications(self, db):
         """Register the user for Google Classroom push notifications."""

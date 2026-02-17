@@ -115,7 +115,15 @@ async def get_course_materials(course_id: str, user_email: str, db: Session = De
         return materials
 
     # --- Fallback: Supermemory Search (if local DB empty) ---
-    sm_client = SupermemoryClient()
+    import os
+    from app.utils.email import get_sm_key_env_var
+    sm_key = os.getenv(get_sm_key_env_var(user_email))
+
+    if not sm_key:
+        print(f"🔍 [COURSES] Skipping Supermemory search for {user_email}: No API key.")
+        return []
+
+    sm_client = SupermemoryClient(api_key=sm_key)
     
     # Filter for this specific course and user
     filters = {

@@ -3,11 +3,12 @@ from app.config import settings
 import json
 
 class SupermemoryClient:
-    def __init__(self):
+    def __init__(self, api_key: str = None):
         self.base_url = settings.SUPERMEMORY_URL
         headers = {}
-        if settings.SUPERMEMORY_API_KEY:
-            headers["Authorization"] = f"Bearer {settings.SUPERMEMORY_API_KEY}"
+        
+        if api_key:
+            headers["Authorization"] = f"Bearer {api_key}"
         
         # Add stealth/modern headers
         headers["User-Agent"] = "FIWB-AI/1.0 (Institutional Academic Hub)"

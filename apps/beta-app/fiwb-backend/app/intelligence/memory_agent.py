@@ -3,12 +3,14 @@ from app.config import settings
 from app.supermemory.client import SupermemoryClient
 from app.intelligence.usage import UsageTracker
 from app.utils.email import standardize_email
+from app.database import SessionLocal
+from app.models import User
 import datetime
 import json
 import hashlib
 
 client = AsyncOpenAI(api_key=settings.OPENAI_API_KEY)
-sm_client = SupermemoryClient()
+# sm_client removed: will be initialized with user key in methods
 
 ENHANCED_MEMORY_PROMPT = """
 You are an Advanced Memory Synthesis Engine for a personalized academic AI assistant.
@@ -202,9 +204,17 @@ class MemoryAgent:
             UsageTracker.log_sm_request(user_email)
             print(f"🧠 [MEMORY AGENT] Attempting to save enhanced memory: {title}")
             print(f"   - User: {user_email}")
-            print(f"   - Content Length: {len(content_block)} chars")
-            print(f"   - Metadata Keys: {list(metadata.keys())}")
             
+            # Fetch user specific key from environment
+            import os
+            from app.utils.email import get_sm_key_env_var
+            sm_key = os.getenv(get_sm_key_env_var(user_email))
+                
+            if not sm_key:
+                print(f"⚠️ [MEMORY AGENT] Skipping Supermemory save for {user_email}: No API key configured.")
+                return {"status": "skipped", "reason": "no_api_key"}
+
+            sm_client = SupermemoryClient(api_key=sm_key)
             result = await sm_client.add_document(
                 content=content_block,
                 metadata=metadata,
@@ -281,10 +291,17 @@ class MemoryAgent:
             
             UsageTracker.log_sm_request(user_email)
             print(f"📊 [PROFILE UPDATE] Attempting to update user profile for {user_email}")
-            print(f"   - Strengths: {len(strengths)} items")
-            print(f"   - Gaps: {len(gaps)} items")
-            print(f"   - Learning Style: {learning_style}")
             
+            # Fetch user specific key from environment
+            import os
+            from app.utils.email import get_sm_key_env_var
+            sm_key = os.getenv(get_sm_key_env_var(user_email))
+                
+            if not sm_key:
+                print(f"👤 [PROFILE] Skipping Supermemory profile update for {user_email}: No API key configured.")
+                return
+
+            sm_client = SupermemoryClient(api_key=sm_key)
             result = await sm_client.add_document(
                 content=profile_content,
                 metadata=metadata,
