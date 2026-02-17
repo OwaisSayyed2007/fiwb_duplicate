@@ -158,7 +158,12 @@ async def login(request: LoginRequest, background_tasks: BackgroundTasks, db: Se
                 "picture": user_info.get('picture')
             }
     
+    except HTTPException as he:
+        # Rethrow HTTP exceptions so they reach the client with their specific message
+        raise he
     except Exception as e:
+        import traceback
         logger.error(f"Login process failed: {str(e)}")
+        logger.error(traceback.format_exc())
         raise HTTPException(status_code=500, detail="Terminal initialization failure")
 
