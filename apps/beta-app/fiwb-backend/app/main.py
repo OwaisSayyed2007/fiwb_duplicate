@@ -57,11 +57,16 @@ async def health_check():
     from app.models import User, Course
     
     from sqlalchemy import func
+    from app.models import Material
     
     try:
         db = SessionLocal()
         user_count = db.query(User).count()
         course_count = db.query(Course).count()
+        
+        # Breakdown of materials
+        gmail_count = db.query(Material).filter(Material.course_id == "GMAIL_INBOX").count()
+        course_mats_count = db.query(Material).filter(Material.course_id != "GMAIL_INBOX").count()
         
         # Sum of all docs indexed across all users
         total_docs = db.query(func.sum(User.supermemory_docs_indexed)).scalar() or 0
@@ -73,8 +78,13 @@ async def health_check():
             "database": "connected",
             "users": user_count,
             "courses": course_count,
+            "materials": {
+                "gmail": gmail_count,
+                "academic": course_mats_count,
+                "total": gmail_count + course_mats_count
+            },
             "supermemory_docs_indexed": total_docs,
-            "version": "1.0.1"
+            "version": "1.0.2"
         }
     except Exception as e:
         return {
