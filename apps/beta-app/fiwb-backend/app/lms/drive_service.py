@@ -23,12 +23,7 @@ class DriveSyncService:
         self.service = None
         self.user_email = user_email
         
-        # Fetch user specific key from environment
-        import os
-        from app.utils.email import get_sm_key_env_var
-        env_sm_key = os.getenv(get_sm_key_env_var(self.user_email))
-        sm_api_key = env_sm_key or sm_api_key
-
+        sm_api_key = settings.SUPERMEMORY_API_KEY or sm_api_key
         self.sm_client = SupermemoryClient(api_key=sm_api_key)
 
     async def _get_service(self):

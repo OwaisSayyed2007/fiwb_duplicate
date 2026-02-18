@@ -205,16 +205,11 @@ class MemoryAgent:
             print(f"🧠 [MEMORY AGENT] Attempting to save enhanced memory: {title}")
             print(f"   - User: {user_email}")
             
-            # Fetch user specific key from environment
-            import os
-            from app.utils.email import get_sm_key_env_var
-            sm_key = os.getenv(get_sm_key_env_var(user_email))
-                
-            if not sm_key:
+            if not settings.SUPERMEMORY_API_KEY:
                 print(f"⚠️ [MEMORY AGENT] Skipping Supermemory save for {user_email}: No API key configured.")
                 return {"status": "skipped", "reason": "no_api_key"}
 
-            sm_client = SupermemoryClient(api_key=sm_key)
+            sm_client = SupermemoryClient(api_key=settings.SUPERMEMORY_API_KEY)
             result = await sm_client.add_document(
                 content=content_block,
                 metadata=metadata,
@@ -292,16 +287,11 @@ class MemoryAgent:
             UsageTracker.log_sm_request(user_email)
             print(f"📊 [PROFILE UPDATE] Attempting to update user profile for {user_email}")
             
-            # Fetch user specific key from environment
-            import os
-            from app.utils.email import get_sm_key_env_var
-            sm_key = os.getenv(get_sm_key_env_var(user_email))
-                
-            if not sm_key:
+            if not settings.SUPERMEMORY_API_KEY:
                 print(f"👤 [PROFILE] Skipping Supermemory profile update for {user_email}: No API key configured.")
                 return
 
-            sm_client = SupermemoryClient(api_key=sm_key)
+            sm_client = SupermemoryClient(api_key=settings.SUPERMEMORY_API_KEY)
             result = await sm_client.add_document(
                 content=profile_content,
                 metadata=metadata,

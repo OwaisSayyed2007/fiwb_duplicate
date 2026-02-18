@@ -142,13 +142,9 @@ async def chat_stream(
             attachment_base64 = base64.b64encode(file_content).decode("utf-8")
             
             # Index to Supermemory for Perpetual Context
-            import os
-            from app.utils.email import get_sm_key_env_var
-            sm_key = os.getenv(get_sm_key_env_var(actual_email))
-
-            if sm_key:
+            if settings.SUPERMEMORY_API_KEY:
                 from app.supermemory.client import SupermemoryClient
-                sm_client = SupermemoryClient(api_key=sm_key)
+                sm_client = SupermemoryClient(api_key=settings.SUPERMEMORY_API_KEY)
                 background_tasks.add_task(
                     sm_client.add_document,
                     content=attachment_text,

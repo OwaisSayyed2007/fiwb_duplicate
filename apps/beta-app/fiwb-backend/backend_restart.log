@@ -21,3 +21,320 @@ INFO:     💰 [SLM] 500 tokens for owaissayyed2007@gmail.com. Cost: +$0.000075 
 INFO:     💰 [SLM] 268 tokens for owaissayyed2007@gmail.com. Cost: +$0.000161 | Total: $2.969739
 INFO:     💰 [SUPERMEMORY] 500 tokens for owaissayyed2007@gmail.com. Cost: +$0.000025 | Total: $2.969764
 INFO:     💰 [SUPERMEMORY] 500 tokens for owaissayyed2007@gmail.com. Cost: +$0.000025 | Total: $2.969789
+WARNING:  WatchFiles detected changes in 'app/api/auth.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [34520]
+🔍 [SUPERMEMORY SEARCH] Initiating search
+   - Query: test query
+   - Filters: {'AND': [{'key': 'user_id', 'value': 'owaissayyed2007@gmail.com', 'negate': False}, {'key': 'type', 'value': 'enhanced_memory', 'negate': True}]}
+   - Limit: 10
+   - Full Payload: {
+  "q": "test query",
+  "limit": 10,
+  "filters": {
+    "AND": [
+      {
+        "key": "user_id",
+        "value": "owaissayyed2007@gmail.com",
+        "negate": false
+      },
+      {
+        "key": "type",
+        "value": "enhanced_memory",
+        "negate": true
+      }
+    ]
+  }
+}
+🔍 [SUPERMEMORY SEARCH] Initiating search
+   - Query: test query
+   - Filters: {'AND': [{'key': 'user_id', 'value': 'owaissayyed2007@gmail.com', 'negate': False}, {'key': 'type', 'value': 'enhanced_memory', 'negate': False}]}
+   - Limit: 10
+   - Full Payload: {
+  "q": "test query",
+  "limit": 10,
+  "filters": {
+    "AND": [
+      {
+        "key": "user_id",
+        "value": "owaissayyed2007@gmail.com",
+        "negate": false
+      },
+      {
+        "key": "type",
+        "value": "enhanced_memory",
+        "negate": false
+      }
+    ]
+  }
+}
+🔍 [SUPERMEMORY SEARCH] Initiating search
+   - Query: test query
+   - Filters: {'AND': [{'key': 'user_id', 'value': 'owaissayyed2007@gmail.com', 'negate': False}, {'key': 'type', 'value': 'assistant_knowledge', 'negate': False}]}
+   - Limit: 5
+   - Full Payload: {
+  "q": "test query",
+  "limit": 5,
+  "filters": {
+    "AND": [
+      {
+        "key": "user_id",
+        "value": "owaissayyed2007@gmail.com",
+        "negate": false
+      },
+      {
+        "key": "type",
+        "value": "assistant_knowledge",
+        "negate": false
+      }
+    ]
+  }
+}
+🔍 [SUPERMEMORY SEARCH] Initiating search
+   - Query: test query
+   - Filters: {'AND': [{'key': 'user_id', 'value': 'owaissayyed2007@gmail.com', 'negate': False}, {'key': 'type', 'value': 'chat_attachment', 'negate': False}]}
+   - Limit: 5
+   - Full Payload: {
+  "q": "test query",
+  "limit": 5,
+  "filters": {
+    "AND": [
+      {
+        "key": "user_id",
+        "value": "owaissayyed2007@gmail.com",
+        "negate": false
+      },
+      {
+        "key": "type",
+        "value": "chat_attachment",
+        "negate": false
+      }
+    ]
+  }
+}
+🔍 [SUPERMEMORY SEARCH] Initiating search
+   - Query: User learning style preferences personal context assistant profile
+   - Filters: {'AND': [{'key': 'user_id', 'value': 'owaissayyed2007@gmail.com', 'negate': False}, {'key': 'type', 'value': 'user_profile', 'negate': False}]}
+   - Limit: 3
+   - Full Payload: {
+  "q": "User learning style preferences personal context assistant profile",
+  "limit": 3,
+  "filters": {
+    "AND": [
+      {
+        "key": "user_id",
+        "value": "owaissayyed2007@gmail.com",
+        "negate": false
+      },
+      {
+        "key": "type",
+        "value": "user_profile",
+        "negate": false
+      }
+    ]
+  }
+}
+   - Response Status: 200
+✅ [SUPERMEMORY SEARCH] Success - Found 0 results
+   - Response Status: 200
+✅ [SUPERMEMORY SEARCH] Success - Found 5 results
+   - Response Status: 200
+✅ [SUPERMEMORY SEARCH] Success - Found 10 results
+   - Response Status: 200
+✅ [SUPERMEMORY SEARCH] Success - Found 9 results
+   - Response Status: 200
+✅ [SUPERMEMORY SEARCH] Success - Found 3 results
+🧠 [MEMORY AGENT] Attempting to save enhanced memory: 💭 Testing Interaction
+   - User: owaissayyed2007@gmail.com
+✅ DEBUG SM: Added document. ID: UeFhkrpBTRSLarkFQjZe8R | Title: 💭 Testing Interaction
+✅ [MEMORY AGENT] Enhanced memory saved successfully!
+   - Title: 💭 Testing Interaction
+   - Document ID: UeFhkrpBTRSLarkFQjZe8R
+   - Interaction ID: 96d925d3d3bf
+📊 [PROFILE UPDATE] Attempting to update user profile for owaissayyed2007@gmail.com
+✅ DEBUG SM: Added document. ID: mrPJuXjSzdSD3EJDAbdDeM | Title: 🧠 Learning Profile: owaissayyed2007@gmail.com
+✅ [PROFILE UPDATE] User profile successfully updated for owaissayyed2007@gmail.com
+/Users/owaissayyed/Github Repos/FIWB Duplicate/apps/beta-app/fiwb-backend/venv/lib/python3.9/site-packages/pypdf/_crypt_providers/_cryptography.py:32: CryptographyDeprecationWarning: ARC4 has been moved to cryptography.hazmat.decrepit.ciphers.algorithms.ARC4 and will be removed from cryptography.hazmat.primitives.ciphers.algorithms in 48.0.0.
+  from cryptography.hazmat.primitives.ciphers.algorithms import AES, ARC4
+/Users/owaissayyed/Github Repos/FIWB Duplicate/apps/beta-app/fiwb-backend/venv/lib/python3.9/site-packages/google/api_core/_python_version_support.py:246: FutureWarning: You are using a non-supported Python version (3.9.6). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.10, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+/Users/owaissayyed/Github Repos/FIWB Duplicate/apps/beta-app/fiwb-backend/venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+INFO:     Started server process [36378]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+ERROR:    Token exchange failed: {
+  "error": "invalid_grant",
+  "error_description": "Malformed auth code."
+}
+INFO:     127.0.0.1:65098 - "POST /api/auth/login HTTP/1.1" 400 Bad Request
+WARNING:  WatchFiles detected changes in 'app/api/auth.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [36378]
+/Users/owaissayyed/Github Repos/FIWB Duplicate/apps/beta-app/fiwb-backend/venv/lib/python3.9/site-packages/pypdf/_crypt_providers/_cryptography.py:32: CryptographyDeprecationWarning: ARC4 has been moved to cryptography.hazmat.decrepit.ciphers.algorithms.ARC4 and will be removed from cryptography.hazmat.primitives.ciphers.algorithms in 48.0.0.
+  from cryptography.hazmat.primitives.ciphers.algorithms import AES, ARC4
+/Users/owaissayyed/Github Repos/FIWB Duplicate/apps/beta-app/fiwb-backend/venv/lib/python3.9/site-packages/google/api_core/_python_version_support.py:246: FutureWarning: You are using a non-supported Python version (3.9.6). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.10, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+/Users/owaissayyed/Github Repos/FIWB Duplicate/apps/beta-app/fiwb-backend/venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+INFO:     Started server process [37040]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'app/config.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [37040]
+/Users/owaissayyed/Github Repos/FIWB Duplicate/apps/beta-app/fiwb-backend/venv/lib/python3.9/site-packages/pypdf/_crypt_providers/_cryptography.py:32: CryptographyDeprecationWarning: ARC4 has been moved to cryptography.hazmat.decrepit.ciphers.algorithms.ARC4 and will be removed from cryptography.hazmat.primitives.ciphers.algorithms in 48.0.0.
+  from cryptography.hazmat.primitives.ciphers.algorithms import AES, ARC4
+/Users/owaissayyed/Github Repos/FIWB Duplicate/apps/beta-app/fiwb-backend/venv/lib/python3.9/site-packages/google/api_core/_python_version_support.py:246: FutureWarning: You are using a non-supported Python version (3.9.6). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.10, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+/Users/owaissayyed/Github Repos/FIWB Duplicate/apps/beta-app/fiwb-backend/venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+INFO:     Started server process [37824]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'app/api/auth.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [37824]
+/Users/owaissayyed/Github Repos/FIWB Duplicate/apps/beta-app/fiwb-backend/venv/lib/python3.9/site-packages/pypdf/_crypt_providers/_cryptography.py:32: CryptographyDeprecationWarning: ARC4 has been moved to cryptography.hazmat.decrepit.ciphers.algorithms.ARC4 and will be removed from cryptography.hazmat.primitives.ciphers.algorithms in 48.0.0.
+  from cryptography.hazmat.primitives.ciphers.algorithms import AES, ARC4
+/Users/owaissayyed/Github Repos/FIWB Duplicate/apps/beta-app/fiwb-backend/venv/lib/python3.9/site-packages/google/api_core/_python_version_support.py:246: FutureWarning: You are using a non-supported Python version (3.9.6). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.10, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+/Users/owaissayyed/Github Repos/FIWB Duplicate/apps/beta-app/fiwb-backend/venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+INFO:     Started server process [37828]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'app/intelligence/retrieval.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [37828]
+/Users/owaissayyed/Github Repos/FIWB Duplicate/apps/beta-app/fiwb-backend/venv/lib/python3.9/site-packages/pypdf/_crypt_providers/_cryptography.py:32: CryptographyDeprecationWarning: ARC4 has been moved to cryptography.hazmat.decrepit.ciphers.algorithms.ARC4 and will be removed from cryptography.hazmat.primitives.ciphers.algorithms in 48.0.0.
+  from cryptography.hazmat.primitives.ciphers.algorithms import AES, ARC4
+/Users/owaissayyed/Github Repos/FIWB Duplicate/apps/beta-app/fiwb-backend/venv/lib/python3.9/site-packages/google/api_core/_python_version_support.py:246: FutureWarning: You are using a non-supported Python version (3.9.6). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.10, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+/Users/owaissayyed/Github Repos/FIWB Duplicate/apps/beta-app/fiwb-backend/venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+INFO:     Started server process [38703]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'app/intelligence/memory_agent.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [38703]
+/Users/owaissayyed/Github Repos/FIWB Duplicate/apps/beta-app/fiwb-backend/venv/lib/python3.9/site-packages/pypdf/_crypt_providers/_cryptography.py:32: CryptographyDeprecationWarning: ARC4 has been moved to cryptography.hazmat.decrepit.ciphers.algorithms.ARC4 and will be removed from cryptography.hazmat.primitives.ciphers.algorithms in 48.0.0.
+  from cryptography.hazmat.primitives.ciphers.algorithms import AES, ARC4
+/Users/owaissayyed/Github Repos/FIWB Duplicate/apps/beta-app/fiwb-backend/venv/lib/python3.9/site-packages/google/api_core/_python_version_support.py:246: FutureWarning: You are using a non-supported Python version (3.9.6). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.10, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+/Users/owaissayyed/Github Repos/FIWB Duplicate/apps/beta-app/fiwb-backend/venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+INFO:     Started server process [38707]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'app/lms/sync_service.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [38707]
+/Users/owaissayyed/Github Repos/FIWB Duplicate/apps/beta-app/fiwb-backend/venv/lib/python3.9/site-packages/pypdf/_crypt_providers/_cryptography.py:32: CryptographyDeprecationWarning: ARC4 has been moved to cryptography.hazmat.decrepit.ciphers.algorithms.ARC4 and will be removed from cryptography.hazmat.primitives.ciphers.algorithms in 48.0.0.
+  from cryptography.hazmat.primitives.ciphers.algorithms import AES, ARC4
+/Users/owaissayyed/Github Repos/FIWB Duplicate/apps/beta-app/fiwb-backend/venv/lib/python3.9/site-packages/google/api_core/_python_version_support.py:246: FutureWarning: You are using a non-supported Python version (3.9.6). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.10, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+/Users/owaissayyed/Github Repos/FIWB Duplicate/apps/beta-app/fiwb-backend/venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+INFO:     Started server process [38717]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'app/lms/gmail_service.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [38717]
+/Users/owaissayyed/Github Repos/FIWB Duplicate/apps/beta-app/fiwb-backend/venv/lib/python3.9/site-packages/pypdf/_crypt_providers/_cryptography.py:32: CryptographyDeprecationWarning: ARC4 has been moved to cryptography.hazmat.decrepit.ciphers.algorithms.ARC4 and will be removed from cryptography.hazmat.primitives.ciphers.algorithms in 48.0.0.
+  from cryptography.hazmat.primitives.ciphers.algorithms import AES, ARC4
+/Users/owaissayyed/Github Repos/FIWB Duplicate/apps/beta-app/fiwb-backend/venv/lib/python3.9/site-packages/google/api_core/_python_version_support.py:246: FutureWarning: You are using a non-supported Python version (3.9.6). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.10, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+/Users/owaissayyed/Github Repos/FIWB Duplicate/apps/beta-app/fiwb-backend/venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+INFO:     Started server process [38722]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'app/lms/drive_service.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [38722]
+/Users/owaissayyed/Github Repos/FIWB Duplicate/apps/beta-app/fiwb-backend/venv/lib/python3.9/site-packages/pypdf/_crypt_providers/_cryptography.py:32: CryptographyDeprecationWarning: ARC4 has been moved to cryptography.hazmat.decrepit.ciphers.algorithms.ARC4 and will be removed from cryptography.hazmat.primitives.ciphers.algorithms in 48.0.0.
+  from cryptography.hazmat.primitives.ciphers.algorithms import AES, ARC4
+/Users/owaissayyed/Github Repos/FIWB Duplicate/apps/beta-app/fiwb-backend/venv/lib/python3.9/site-packages/google/api_core/_python_version_support.py:246: FutureWarning: You are using a non-supported Python version (3.9.6). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.10, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+/Users/owaissayyed/Github Repos/FIWB Duplicate/apps/beta-app/fiwb-backend/venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+INFO:     Started server process [38734]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'app/api/chat.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [38734]
+/Users/owaissayyed/Github Repos/FIWB Duplicate/apps/beta-app/fiwb-backend/venv/lib/python3.9/site-packages/pypdf/_crypt_providers/_cryptography.py:32: CryptographyDeprecationWarning: ARC4 has been moved to cryptography.hazmat.decrepit.ciphers.algorithms.ARC4 and will be removed from cryptography.hazmat.primitives.ciphers.algorithms in 48.0.0.
+  from cryptography.hazmat.primitives.ciphers.algorithms import AES, ARC4
+/Users/owaissayyed/Github Repos/FIWB Duplicate/apps/beta-app/fiwb-backend/venv/lib/python3.9/site-packages/google/api_core/_python_version_support.py:246: FutureWarning: You are using a non-supported Python version (3.9.6). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.10, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+/Users/owaissayyed/Github Repos/FIWB Duplicate/apps/beta-app/fiwb-backend/venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+INFO:     Started server process [38741]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'app/api/courses.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [38741]
+/Users/owaissayyed/Github Repos/FIWB Duplicate/apps/beta-app/fiwb-backend/venv/lib/python3.9/site-packages/pypdf/_crypt_providers/_cryptography.py:32: CryptographyDeprecationWarning: ARC4 has been moved to cryptography.hazmat.decrepit.ciphers.algorithms.ARC4 and will be removed from cryptography.hazmat.primitives.ciphers.algorithms in 48.0.0.
+  from cryptography.hazmat.primitives.ciphers.algorithms import AES, ARC4
+/Users/owaissayyed/Github Repos/FIWB Duplicate/apps/beta-app/fiwb-backend/venv/lib/python3.9/site-packages/google/api_core/_python_version_support.py:246: FutureWarning: You are using a non-supported Python version (3.9.6). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.10, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+/Users/owaissayyed/Github Repos/FIWB Duplicate/apps/beta-app/fiwb-backend/venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+INFO:     Started server process [38745]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'app/api/search.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [38745]
+/Users/owaissayyed/Github Repos/FIWB Duplicate/apps/beta-app/fiwb-backend/venv/lib/python3.9/site-packages/pypdf/_crypt_providers/_cryptography.py:32: CryptographyDeprecationWarning: ARC4 has been moved to cryptography.hazmat.decrepit.ciphers.algorithms.ARC4 and will be removed from cryptography.hazmat.primitives.ciphers.algorithms in 48.0.0.
+  from cryptography.hazmat.primitives.ciphers.algorithms import AES, ARC4
+/Users/owaissayyed/Github Repos/FIWB Duplicate/apps/beta-app/fiwb-backend/venv/lib/python3.9/site-packages/google/api_core/_python_version_support.py:246: FutureWarning: You are using a non-supported Python version (3.9.6). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.10, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+/Users/owaissayyed/Github Repos/FIWB Duplicate/apps/beta-app/fiwb-backend/venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+INFO:     Started server process [38748]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'app/utils/email.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [38748]
+/Users/owaissayyed/Github Repos/FIWB Duplicate/apps/beta-app/fiwb-backend/venv/lib/python3.9/site-packages/pypdf/_crypt_providers/_cryptography.py:32: CryptographyDeprecationWarning: ARC4 has been moved to cryptography.hazmat.decrepit.ciphers.algorithms.ARC4 and will be removed from cryptography.hazmat.primitives.ciphers.algorithms in 48.0.0.
+  from cryptography.hazmat.primitives.ciphers.algorithms import AES, ARC4
+/Users/owaissayyed/Github Repos/FIWB Duplicate/apps/beta-app/fiwb-backend/venv/lib/python3.9/site-packages/google/api_core/_python_version_support.py:246: FutureWarning: You are using a non-supported Python version (3.9.6). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.10, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+/Users/owaissayyed/Github Repos/FIWB Duplicate/apps/beta-app/fiwb-backend/venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+INFO:     Started server process [38751]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.

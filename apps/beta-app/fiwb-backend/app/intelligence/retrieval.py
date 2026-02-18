@@ -9,17 +9,9 @@ from app.utils.email import standardize_email
 
 class RetrievalOrchestrator:
     def __init__(self, user_email: str):
-        from app.database import SessionLocal
-        from app.models import User
         # Standardize email to full version
         self.user_email = standardize_email(user_email)
-        
-        # Fetch user specific key from environment
-        import os
-        from app.utils.email import get_sm_key_env_var
-        sm_key = os.getenv(get_sm_key_env_var(self.user_email))
-            
-        self.sm_client = SupermemoryClient(api_key=sm_key)
+        self.sm_client = SupermemoryClient(api_key=settings.SUPERMEMORY_API_KEY)
         self.client = AsyncOpenAI(api_key=settings.OPENAI_API_KEY)
     
     async def _contextualize_query(self, query: str, history: List[Dict]) -> str:
