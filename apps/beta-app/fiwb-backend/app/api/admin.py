@@ -3,6 +3,7 @@ from sqlalchemy.orm import Session
 from app.database import get_db, SessionLocal
 from app.models import User, Course, user_courses
 from app.lms.sync_service import LMSSyncService
+from app.supermemory.client import SupermemoryClient
 from sqlalchemy import delete
 import asyncio
 
@@ -79,9 +80,7 @@ async def trigger_mock_sync(user_email: str, db: Session = Depends(get_db)):
         db.commit()
         db.refresh(user)
     
-    import os
-    from app.utils.email import get_sm_key_env_var
-    sm_key = os.getenv(get_sm_key_env_var(user_email))
+    sm_key = settings.SUPERMEMORY_API_KEY
     sm_client = SupermemoryClient(api_key=sm_key)
     
     mock_courses = [
