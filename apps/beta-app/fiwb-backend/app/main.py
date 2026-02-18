@@ -56,10 +56,16 @@ async def health_check():
     from app.database import SessionLocal
     from app.models import User, Course
     
+    from sqlalchemy import func
+    
     try:
         db = SessionLocal()
         user_count = db.query(User).count()
         course_count = db.query(Course).count()
+        
+        # Sum of all docs indexed across all users
+        total_docs = db.query(func.sum(User.supermemory_docs_indexed)).scalar() or 0
+        
         db.close()
         
         return {
@@ -67,7 +73,8 @@ async def health_check():
             "database": "connected",
             "users": user_count,
             "courses": course_count,
-            "version": "1.0.0"
+            "supermemory_docs_indexed": total_docs,
+            "version": "1.0.1"
         }
     except Exception as e:
         return {
